@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --font-family: "Poppins", sans-serif;
+    --main-container: flex;
+    --card-container: flex;
+    --card-flex: flex;
+}
+
+// 375px:23.438em, 
+// 425px:26.5625em, 
+// 768px:48em, 
+// 1024px:64em, 
+// 1200px:75em, 
+// 1366px:85.375em, 
+// 1440px:90em 
+// 1920px:120em 
+$breakpoints-up: (
+    'res375': '23.438em',
+    // iphone all plus version are cover here 
+    'res425': '26.5625em',
+    'res768': '48em',
+    'res800': '50em',
+    'res1024': '64em',
+    'res1280': '80em',
+    'res1366': '85.375em',
+    'res1440': '90em',
+    'res1920': '120em',
+    'res2k': '128em',
+    'res4k':'240em'
+);
+
+@mixin breakpoint($size) {
+    @media (min-width: map-get($breakpoints-up, $size)) {
+        @content;
+    }
+}
+
+@include breakpoint(res768) {}
+
+body {
+    background-color: #F0F0F0;
+    display: grid;
+    place-items: center;
+    height: 100vh;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+}
+
+.card-container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 20px;
+
+
+    .card-flex {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+
+    }
+}
+
+.email {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding-top: 10px;
+
+    .bold {
+        font-weight: 600;
+    }
+
+    input {
+        width: 100%;
+        padding: 15px;
+        border-radius: 5px;
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+
+
+
+
+
+}
+
+button {
+    background-color: #232742;
+    padding: 15px;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+}
