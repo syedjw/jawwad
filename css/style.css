@@ -9,25 +9,100 @@
   --main-container: flex;
   --card-container: flex;
   --card-flex: flex;
+  --primary: #36384D;
+  --secondary: #FFFFFF;
 }
 
 body {
-  background-color: #F0F0F0;
+  background-color: var(--secondary);
   display: grid;
   place-items: center;
   height: 100vh;
+}
+@media (min-width: 48em) {
+  body {
+    background-color: var(--primary);
+  }
+}
+
+nav {
+  background-color: var(--primary);
+  padding: 10px;
+  border: none;
+  font-size: 20px;
+}
+nav a {
+  color: white;
+  padding: 10px;
+  text-decoration: none;
 }
 
 .main-container {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+@media (min-width: 48em) {
+  .main-container {
+    background-color: var(--secondary);
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+  }
+}
+
+@media (min-width: 48em) {
+  .mob-img {
+    display: none;
+  }
+}
+
+.img-desktop {
+  display: none;
+}
+@media (min-width: 48em) {
+  .img-desktop {
+    display: flex;
+    flex-direction: column;
+    flex-direction: row;
+  }
 }
 
 .card-container {
   display: flex;
   flex-direction: column;
   padding: 20px;
+}
+@media (min-width: 48em) {
+  .card-container {
+    width: 40%;
+  }
+}
+.card-container h1 {
+  color: var(--primary);
+  padding-bottom: 15px;
+}
+@media (min-width: 48em) {
+  .card-container h1 {
+    font-size: 50px;
+    text-align: center;
+    padding-bottom: 20px;
+  }
+}
+.card-container .font-size {
+  color: var(--primary);
+  font-size: 16px;
+}
+@media (min-width: 48em) {
+  .card-container .font-size {
+    color: var(--primary);
+    padding: 10px;
+    font-size: 18px;
+  }
 }
 
 .card {
@@ -41,22 +116,48 @@ body {
   align-items: center;
   gap: 5px;
 }
+@media (min-width: 48em) {
+  .card .card-flex {
+    padding: 10px;
+    color: var(--primary);
+    font-size: 14px;
+  }
+}
 
 .email {
   display: flex;
   flex-direction: column;
   gap: 5px;
   padding-top: 10px;
+  color: var(--primary);
 }
 .email .bold {
   font-weight: 600;
 }
-.email input {
+.email input[type=email] {
   width: 100%;
   padding: 15px;
   border-radius: 5px;
   font-size: 14px;
   font-weight: 600;
+  border: 1px solid #C8C8C8;
+}
+.email .error input {
+  color: var(--red);
+  border-color: red;
+}
+.email .email-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.email .font-color {
+  color: #D27F7B;
+  font-weight: 600;
+  font-size: 12px;
+}
+.email .input-text {
+  color: red;
 }
 
 button {
@@ -66,4 +167,44 @@ button {
   border: none;
   border-radius: 5px;
   color: white;
+}
+
+.thanks-container {
+  background: var(--secondary);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  border-radius: 10px;
+  color: var(--primary);
+}
+.thanks-container h1 {
+  font-size: 50px;
+}
+.thanks-container span {
+  font-weight: 600;
+}
+@media (min-width: 48em) {
+  .thanks-container {
+    padding: 30px;
+    width: 50%;
+    color: var(--primary);
+    font-size: 14px;
+  }
+}
+@media (min-width: 64em) {
+  .thanks-container {
+    padding: 30px;
+    width: 35%;
+    color: var(--primary);
+    font-size: 14px;
+  }
+}
+@media (min-width: 90em) {
+  .thanks-container {
+    padding: 30px;
+    width: 23%;
+    color: var(--primary);
+    font-size: 14px;
+  }
 }/*# sourceMappingURL=style.css.map */

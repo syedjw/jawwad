@@ -9,7 +9,10 @@
     --main-container: flex;
     --card-container: flex;
     --card-flex: flex;
+    --primary: #36384D;
+    --secondary: #FFFFFF;
 }
+
 
 // 375px:23.438em, 
 // 425px:26.5625em, 
@@ -40,27 +43,103 @@ $breakpoints-up: (
     }
 }
 
-@include breakpoint(res768) {}
+
 
 body {
-    background-color: #F0F0F0;
+    background-color: var(--secondary);
     display: grid;
     place-items: center;
     height: 100vh;
+    // padding: 10px;
+
+    @include breakpoint(res768) {
+        background-color: var(--primary);
+    }
+}
+
+nav {
+    background-color: var(--primary);
+    padding: 10px;
+    border: none;
+    font-size: 20px;
+
+    a {
+        color: white;
+        padding: 10px;
+        text-decoration: none;
+
+    }
 }
 
 .main-container {
+
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    // gap: 10px;
 
+    @include breakpoint(res768) {
+        background-color: var(--secondary);
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        // width: 60%;
+        border-radius: 10px;
+
+    }
+}
+
+.mob-img {
+    @include breakpoint(res768) {
+        display: none;
+    }
+}
+
+.img-desktop {
+    display: none;
+
+
+    @include breakpoint(res768) {
+        display: flex;
+        flex-direction: column;
+        flex-direction: row;
+    }
 }
 
 .card-container {
+
     display: flex;
     flex-direction: column;
     padding: 20px;
 
+    @include breakpoint(res768) {
+        width: 40%;
+    }
+
+    h1 {
+        color: var(--primary);
+        padding-bottom: 15px;
+
+        @include breakpoint(res768) {
+            font-size: 50px;
+            text-align: center;
+            padding-bottom: 20px;
+        }
+    }
+
+    .font-size {
+        color: var(--primary);
+        font-size: 16px;
+
+        @include breakpoint(res768) {
+            color: var(--primary);
+            padding: 10px;
+            font-size: 18px;
+        }
+    }
 }
 
 .card {
@@ -69,12 +148,17 @@ body {
     gap: 10px;
     padding-top: 20px;
 
-
     .card-flex {
         display: flex;
         align-items: center;
         gap: 5px;
 
+        @include breakpoint(res768) {
+            padding: 10px;
+            color: var(--primary);
+            font-size: 14px;
+
+        }
     }
 }
 
@@ -83,17 +167,42 @@ body {
     flex-direction: column;
     gap: 5px;
     padding-top: 10px;
+    color: var(--primary);
 
     .bold {
         font-weight: 600;
     }
 
-    input {
+    input[type=email] {
         width: 100%;
         padding: 15px;
         border-radius: 5px;
         font-size: 14px;
         font-weight: 600;
+        border: 1px solid #C8C8C8;
+    }
+
+    .error {
+        input {
+            color: var(--red);
+            border-color: red;
+        }
+    }
+
+    .email-flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .font-color {
+        color: #D27F7B;
+        font-weight: 600;
+        font-size: 12px;
+    }
+
+    .input-text {
+        color: red;
     }
 }
 
@@ -104,4 +213,50 @@ button {
     border: none;
     border-radius: 5px;
     color: white;
+}
+
+.thanks-container {
+    background: var(--secondary);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    color: var(--primary);
+
+
+    h1 {
+        font-size: 50px;
+    }
+
+    span {
+        font-weight: 600;
+    }
+
+    @include breakpoint(res768) {
+
+        padding: 30px;
+        width: 50%;
+
+        color: var(--primary);
+        font-size: 14px;
+    }
+
+    @include breakpoint(res1024) {
+
+        padding: 30px;
+        width: 35%;
+
+        color: var(--primary);
+        font-size: 14px;
+    }
+
+    @include breakpoint(res1440) {
+
+        padding: 30px;
+        width: 23%;
+
+        color: var(--primary);
+        font-size: 14px;
+    }
 }

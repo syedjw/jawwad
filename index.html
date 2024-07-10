@@ -11,13 +11,33 @@
     <title>News letter sign-up form</title>
   </head>
   <body>
+    <nav>
+      <a href="/email.html">Home</a>
+      <a href="/thank.html">Thank</a>
+      <a href="/home.html">Error</a>
+      <a href="/index.html">Full page</a>
+    </nav>
+
     <div class="main-container">
-      <img src="images/illustration-sign-up-mobile.svg" alt="" />
+      <div>
+        <img
+          class="mob-img"
+          src="images/illustration-sign-up-mobile.svg"
+          alt=""
+        />
+        <img
+          class="img-desktop"
+          src="images/illustration-sign-up-desktop.svg"
+          alt=""
+        />
+      </div>
 
       <div class="card-container">
         <h1>Stay Updated!</h1>
 
-        <p>Join 60,000+ product manager receiving monthly updated on:</p>
+        <p class="font-size">
+          Join 60,000+ product manager receiving monthly updated on:
+        </p>
 
         <div class="card">
           <div class="card-flex">
@@ -42,19 +62,86 @@
           </div>
 
           <div class="email">
-            <p class="bold">Email address</p>
-            <div class="email-text">
-              <input type="text" placeholder="email@company.com" />
+            <div class="email-flex">
+              <label class="bold">Email address</label>
+            </div>
+            <div class="input-text">
+              <input type="email" placeholder="ash@loremcompany.com " />
+            </div>
+          </div>
+          <button>Subscribe to monthly newsletter</button>
+        </div>
+      </div>
+    </div>
+    <div class="thanks-container">
+      <div class="success-icon">
+        <img src="images/icon-success.svg" alt="" />
+      </div>
+      <h1>Thanks for subscribing!</h1>
+
+      <p>
+        A confirmation email has been sent to
+        <span> ash@loremcompany.com</span>.Please open it and click the button
+        inside to confirm your subscription.
+      </p>
+
+      <button>Dismiss message</button>
+    </div>
+
+    <div class="main-container">
+      <div>
+        <img
+          class="mob-img"
+          src="images/illustration-sign-up-mobile.svg"
+          alt=""
+        />
+        <img
+          class="img-desktop"
+          src="images/illustration-sign-up-desktop.svg"
+          alt=""
+        />
+      </div>
+
+      <div class="card-container">
+        <h1>Stay Updated!</h1>
+
+        <p class="font-size">
+          Join 60,000+ product manager receiving monthly updated on:
+        </p>
+
+        <div class="card">
+          <div class="card-flex">
+            <div>
+              <img src="images/icon-list.svg" alt="" />
+            </div>
+            <p>Product discovery and building what matters</p>
+          </div>
+
+          <div class="card-flex">
+            <div>
+              <img src="images/icon-list.svg" alt="" />
+            </div>
+            <p>Measuring to ensure updates are a success</p>
+          </div>
+
+          <div class="card-flex">
+            <div>
+              <img src="images/icon-list.svg" alt="" />
+            </div>
+            <p>And much more!</p>
+          </div>
+
+          <div class="email">
+            <div class="email-flex">
+              <label class="bold">Email address</label>
+              <span class="font-color">valid email address</span>
+            </div>
+            <div class="input-text error">
+              <input type="email" placeholder="ash@loremcompany.com " />
             </div>
           </div>
 
           <button>Subscribe to monthly newsletter</button>
-        </div>
-        <div>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae eius
-          reiciendis maxime mollitia impedit perferendis doloribus ut amet
-          perspiciatis quia, ullam est dolores eveniet aliquid illo atque fuga
-          laboriosam delectus.
         </div>
       </div>
     </div>
